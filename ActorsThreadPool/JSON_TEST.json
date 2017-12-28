@@ -1,0 +1,424 @@
+{
+  "threads": 7,
+  "Computers" : [
+    {
+      "Type":"A",
+      "Sig Success": "1111111",
+      "Sig Fail": "1000000"
+    },
+    {
+      "Type":"B",
+      "Sig Success": "2222222",
+      "Sig Fail": "2000000"
+    }
+  ],
+  "Phase 1" : [
+    //OPEN COURSES - CS DEPARTMENT
+    {
+      "Action":"Open Course", "Department": "CS", "Course": "ICS", "Space": "10", "Prerequisites" : []
+    },
+    {
+      "Action":"Open Course", "Department": "CS", "Course": "SPL", "Space": "10", "Prerequisites" : ["ICS","DS"]
+    },
+    {
+      "Action":"Open Course", "Department": "CS", "Course": "DS", "Space": "10", "Prerequisites" :  ["ICS","INFI1"]
+    },
+    {
+      "Action":"Open Course", "Department": "CS", "Course": "INFI1", "Space": "10", "Prerequisites" :  []
+    },
+    {
+      "Action":"Open Course", "Department": "CS", "Course": "COMBI", "Space": "10", "Prerequisites" :  []
+    },
+    {
+      "Action":"Open Course", "Department": "CS", "Course": "LOGIC", "Space": "10", "Prerequisites" : []
+    },
+
+    //OPEN COURSES - CE DEPARTMENT
+
+    {
+      "Action":"Open Course", "Department": "CE", "Course": "calculus1", "Space": "10", "Prerequisites" : []
+    },
+    {
+      "Action":"Open Course", "Department": "CE", "Course": "linearA", "Space": "10", "Prerequisites" : []
+    },
+    {
+      "Action":"Open Course", "Department": "CE", "Course": "calculus2", "Space": "10", "Prerequisites" :  ["calculus1","linearA"]
+    },
+    {
+      "Action":"Open Course", "Department": "CE", "Course": "IEE", "Space": "100", "Prerequisites" :  ["calculus1","linearA"]
+    },
+    //OPEN COURSES - MATH DEPARTMENT
+
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "INFI2", "Space": "10", "Prerequisites" : ["INFI1"]
+    },
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "INFI3", "Space": "10", "Prerequisites" : ["INFI2"]
+    },
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "FA1", "Space": "10", "Prerequisites" :  ["INFI2"]
+    },
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "FA2", "Space": "10", "Prerequisites" :  ["INFI2","FA1"]
+    },
+    //COURSE FOR ADMINISTRATIVE OBLIGATION
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "COURSE1", "Space": "10", "Prerequisites" :  []
+    },
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "COURSE2", "Space": "10", "Prerequisites" :  []
+    },
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "COURSE3", "Space": "10", "Prerequisites" :  []
+    },
+    {
+      "Action":"Open Course", "Department": "MATH", "Course": "COURSE4", "Space": "10", "Prerequisites" :  []
+    },
+
+    //ADD STUDENT
+
+    {
+      "Action": "Add Student", "Department": "CE", "Student": "STUDENT_WITH_PRE"
+    },
+    {
+      "Action": "Add Student", "Department": "CE", "Student": "nir"
+    },
+    {
+      "Action": "Add Student", "Department": "CE", "Student": "amir"
+    },
+    {
+      "Action": "Add Student", "Department": "CE", "Student": "dor"
+    },
+    {
+      "Action": "Add Student", "Department": "CE", "Student": "tom"
+    },
+    {
+      "Action": "Add Student", "Department": "CE", "Student": "aviran"
+    },
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "gal"
+    },
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "batel"
+    },
+    {
+      "Action": "Add Student", "Department": "MATH", "Student": "dana"
+    },
+    {
+      "Action": "Add Student", "Department": "MATH", "Student": "ariel"
+    },
+    {
+      "Action": "Add Student", "Department": "MATH", "Student": "iris"
+    },
+    {
+      "Action": "Add Student", "Department": "MATH", "Student": "shir"
+    }
+
+
+  ],
+  "Phase 2" : [
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "omri"
+    },
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "erez"
+    },
+    // PARTICIPATE IN COURSE
+    {
+      "Action": "Participate In Course", "Student": "nir", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "amir", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "dor", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "aviran", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "nir", "Course": "linearA", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "amir", "Course": "linearA", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "dor", "Course": "linearA", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "aviran", "Course": "linearA", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "gal", "Course": "ICS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "omri", "Course": "ICS", "Grade": ["30"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "batel", "Course": "ICS", "Grade": ["77"]
+    },
+    // {
+    //   "Action": "Participate In Course", "Student": "erez", "Course": "ICS", "Grade": ["77"]
+    //},
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "sonya"
+    },
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "roni"
+    },
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "david"
+    },
+    {
+      "Action": "Add Student", "Department": "CS", "Student": "ran"
+    },
+    {
+      "Action": "Participate In Course", "Student": "sonya", "Course": "ICS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "roni", "Course": "ICS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "david", "Course": "ICS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "ran", "Course": "ICS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "sonya", "Course": "INFI1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "roni", "Course": "INFI1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "david", "Course": "INFI1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "ran", "Course": "INFI1", "Grade": ["77"]
+    },
+
+    /** ----------------------------- MUST FAIL!!!! - THEY DO NOT HAVE INFI1------------------------------------**/
+
+    {
+      "Action": "Participate In Course", "Student": "gal", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "omri", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "batel", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "erez", "Course": "DS", "Grade": ["77"]
+    },
+    /** --------------------------------- MUST FAIL!!!! - THEY DO NOT HAVE DS AND COMBI------------------------**/
+
+    {
+      "Action": "Participate In Course", "Student": "gal", "Course": "SPL", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "omri", "Course": "SPL", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "batel", "Course": "SPL", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "erez", "Course": "SPL", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "nir", "Course": "IEE", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "amir", "Course": "IEE", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "dor", "Course": "IEE", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "aviran", "Course": "IEE", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "sonya", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "roni", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "david", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "ran", "Course": "DS", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "a", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "b", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "c", "Course": "calculus1", "Grade": ["77"]
+    },
+    //MATH STUDENTS - FOR ADMINISTRATIVE OBLIGATION CHECK
+    {
+      "Action": "Participate In Course", "Student": "iris", "Course": "COURSE1", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "dana", "Course": "COURSE1", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "shir", "Course": "COURSE1", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "ariel", "Course": "COURSE1", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "iris", "Course": "COURSE2", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "dana", "Course": "COURSE2", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "shir", "Course": "COURSE2", "Grade": ["50"]    // fail sig - failed in course
+    },
+    {
+      "Action": "Participate In Course", "Student": "ariel", "Course": "COURSE2", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "iris", "Course": "COURSE3", "Grade": ["80"]
+    },
+    // {
+    //  "Action": "Participate In Course", "Student": "dana", "Course": "COURSE3", "Grade": ["80"] //fail sig - not take this course
+    //},
+    {
+      "Action": "Participate In Course", "Student": "shir", "Course": "COURSE3", "Grade": ["80"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "ariel", "Course": "COURSE3", "Grade": ["80"]
+    }
+  ],
+  "Phase 3": [        //PHASE 3
+
+    {
+      "Action": "Participate In Course", "Student": "d", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "e", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "f", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "g", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Add Spaces", "Course": "calculus1", "Number": "3"
+    },
+    {
+      "Action": "Add Spaces", "Course": "calculus1", "Number": "0"
+    },
+    {
+      "Action": "Add Spaces", "Course": "calculus1", "Number": "0"
+    },
+    {
+      "Action": "Add Spaces", "Course": "FA2", "Number": "100"
+    },
+    {
+      "Action": "Add Spaces", "Course": "FA2", "Number": "100"
+    },
+    {
+      "Action": "Add Spaces", "Course": "FA2", "Number": "100"
+    },
+    {
+      "Action": "Participate In Course", "Student": "a", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "b", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "c", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "d", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "e", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "f", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Participate In Course", "Student": "g", "Course": "calculus1", "Grade": ["77"]
+    },
+    {
+      "Action": "Register With Preferences",
+      "Student": "omri",
+      "Preferences": ["INFI3" ,"INFI3" ,"INFI1" , "DS", "DS"],
+      "Grade": ["80" ,"80" , "80" , "80", "80" ]
+    },
+    {
+      "Action": "Register With Preferences",
+      "Student": "nir",
+      "Preferences": ["ICS" ,"ICS" ,"ICS" , "ICS", "ICS"],
+      "Grade": ["80" ,"80" , "80" , "80", "80" ]
+    },
+    {
+      "Action": "Register With Preferences",
+      "Student": "amir",
+      "Preferences": ["FA2" ,"FA2" ,"FA2" , "FA2", "ICS"],
+      "Grade": ["80" ,"80" , "80" , "80", "80" ]
+    },
+    {
+      "Action" : "Administrative Check",
+      "Department": "CE",
+      "Students": ["nir","dor","amir"],
+      "Computer": "A",
+      "Conditions" : ["calculus1", "IEE","linearA"]
+    },
+    {
+      "Action" : "Administrative Check",
+      "Department": "MATH",
+      "Students": ["iris","dana","shir","ariel"],
+      "Computer": "A",
+      "Conditions" : ["COURSE1", "COURSE2","COURSE3"]
+    },
+    {
+      "Action" : "Administrative Check",
+      "Department": "CS",
+      "Students": ["gal","omri","erez"],
+      "Computer": "A",
+      "Conditions" : ["ICS"]
+    },
+    {
+       "Action": "Unregister", "Student": "nir", "Course": "calculus1"
+     },
+     {
+       "Action": "Unregister", "Student": "dor", "Course": "calculus1"
+     },
+     {
+       "Action": "Unregister", "Student": "aviran", "Course": "calculus1"
+     },
+     {
+       "Action": "Unregister", "Student": "amir", "Course": "calculus1"
+     },
+     {
+       "Action": "Unregister", "Student": "sonya", "Course": "INFI1"
+     },
+     {
+       "Action": "Unregister", "Student": "roni", "Course": "INFI1"
+     },
+     {
+       "Action": "Close Course","Department": "CS","Course": "INFI1"
+     },
+     {
+       "Action": "Close Course","Department": "CE","Course": "linearA"
+     },
+     {
+       "Action": "Close Course","Department": "MATH","Course": "INFI1"       //THE COURSE NOT EXISTS IN MATH!
+     },
+     {
+       "Action": "Close Course","Department": "CS","Course": "INFI1"
+     }
+
+
+  ]
+}
