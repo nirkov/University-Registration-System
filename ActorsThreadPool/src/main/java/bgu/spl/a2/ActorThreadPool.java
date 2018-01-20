@@ -93,7 +93,6 @@ public class ActorThreadPool {
 		VM.inc();
 		for(Thread T : threadPool){
 			VM.inc();
-			VM.inc();
 			T.interrupt();
 		}
 		for(Thread T : threadPool) T.join();
@@ -145,9 +144,9 @@ public class ActorThreadPool {
 	}
 
 
-	//The nextUnlockedActor function must be synchronized so that
+	// The nextUnlockedActor function must be synchronized so that
 	// both threads can not simultaneously access to the same ACTOR.
-	//The function works so that every time a single thread comes
+	// The function works so that every time a single thread comes
 	// in, finds a free ACTOR and locks it from other threads
 
 	private synchronized String nextUnlockedActor() {
@@ -161,8 +160,8 @@ public class ActorThreadPool {
 			found = true;
 			nextUnlocked = actorWaitingToExecute.peek();
 			mapLockedActor.put(nextUnlocked , true);	 //this thread lock this actor from other threads
-		    }else {														//else we want to delete this actor if he empty or insert him in the end of the queue if he locked
-			size--;
+		    }else {						 //else we want to delete this actor if he empty
+			size--;                                          //or insert him in the end of the queue if he locked
 			nextUnlocked =  actorWaitingToExecute.poll();
 			if(!mapOfActionQ.get(nextUnlocked).isEmpty()) {
 		   	    actorWaitingToExecute.add(nextUnlocked);
@@ -174,7 +173,7 @@ public class ActorThreadPool {
 	    return nextUnlocked;
 	}
 
-	private void endOfMission(String nextActorID) {	// should not be syncronize because only one thread work on this Actor
+	private void endOfMission(String nextActorID) {	
 		mapLockedActor.put(nextActorID, false);
 		VM.inc();
 	}
