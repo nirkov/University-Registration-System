@@ -24,10 +24,6 @@ public abstract class Action<R> {
     protected abstract void start();
 
 
-    /**
-     * start/continue handling the action
-     */
-    /*package*/
     final void handle(ActorThreadPool pool, String actorId, PrivateState actorState) {
         if(toContinue.get()) {
             continueWithCallback.call();
@@ -40,12 +36,6 @@ public abstract class Action<R> {
     }
 
 
-    /**
-     * add a callback to be executed once all the given actions results are
-     * resolved
-     * @param actions
-     * @param callback the callback to execute once all the results are resolved
-     */
     protected final void then(Collection<? extends Action<?>> actions, callback callback) {
         numOfActionThisDepend = new AtomicInteger(actions.size());
         for (Iterator <? extends Action<?>> iterator = actions.iterator(); iterator.hasNext();) {   //We'll go through the whole collection
@@ -60,52 +50,28 @@ public abstract class Action<R> {
         }
     }
 
-    /**
-     * resolve the internal result - should be called by the action derivative
-     * once it is done.
-     *
-     * @param result - the action calculated result
-     */
+  
     protected final void complete(R result) {
         if(!myPromise.isResolved()) {
             myPromise.resolve(result);
         }
     }
 
-    /**
-     * @return action's promise (result)
-     */
     public final Promise<R> getResult() {
         return myPromise;
     }
 
-    /**
-     * send an action to an other actor
-     *
-     * @param action
-     * 				the action
-     * @param actorId
-     * 				actor's id
-     * @param actorState
-     * 				actor's private state (actor's information)
-     *
-     * @return promise that will hold the result of the sent action
-     */
+ 
     public Promise<?> sendMessage(Action<?> action, String actorId, PrivateState actorState){
         myPool.submit(action, actorId, actorState);
         return this.getResult();
     }
-    /**
-     * set action's name
-     * @param actionName
-     */
+    
+    
     public void setActionName(String actionName){
         this.actionName = actionName;
     }
 
-    /**
-     * @return action's name
-     */
     public String getActionName(){
         return actionName;
     }
