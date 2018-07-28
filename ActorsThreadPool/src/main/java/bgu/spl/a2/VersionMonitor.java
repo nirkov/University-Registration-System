@@ -15,13 +15,7 @@ public class VersionMonitor {
     public int getVersion() {
         return versionM.get();
     }
-
-    /**
-     * Why Syncronized -
-     * need to be syncronized Because of a lack of synchronization
-     * that can be created by reading from the memo and writing to it,
-     * with some treads coming together for the same function
-     */
+    
     public synchronized void inc() {
         versionM.set(versionM.get()+1);
         notifyAll();
