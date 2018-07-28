@@ -10,16 +10,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * represents an actor thread pool - to understand what this class does please
- * refer to your assignment.
- *
- * Note for implementors: you may add methods and synchronize any of the
- * existing methods in this class *BUT* you must be able to explain why the
- * synchronization is needed. In addition, the methods you add can only be
- * private, protected or package protected - in other words, no new public
- * methods
- */
+
 public class ActorThreadPool {
 	private ConcurrentHashMap<String , ConcurrentLinkedQueue<Action>>   mapOfActionQ;          //each cell is an actor implemented as Queue
 	private ConcurrentHashMap<String , PrivateState>                    mapOfPS;		   //each cell is an private state
@@ -29,18 +20,7 @@ public class ActorThreadPool {
 	private VersionMonitor 						    VM;
 	private AtomicBoolean 						    SHUTDOWN;
 
-	/**
-	 * creates a {@link ActorThreadPool} which has nthreads. Note, threads
-	 * should not get started until calling to the {@link #start()} method.
-	 *
-	 * Implementors note: you may not add other constructors to this class nor
-	 * you allowed to add any other parameter to this constructor - changing
-	 * this may cause automatic tests to fail..
-	 *
-	 * @param nthreads
-	 *            the number of threads that should be started by this thread
-	 *            pool
-	 */
+	
 	public ActorThreadPool(int nthreads) {
 		SHUTDOWN = new AtomicBoolean(false);
 		mapOfActionQ = new ConcurrentHashMap<>();		//create map of action queue which each queue represent Actor
@@ -51,17 +31,7 @@ public class ActorThreadPool {
 		VM = new VersionMonitor();
 	}
 
-	/**
-	 * submits an action into an actor to be executed by a thread belongs to
-	 * this thread pool
-	 *
-	 * @param action
-	 *            the action to execute
-	 * @param actorId
-	 *            corresponding actor's id
-	 * @param actorState
-	 *            actor's private state (actor's information)
-	 */
+	
 	public synchronized void submit(Action<?> action, String actorId, PrivateState actorState) {
 		ConcurrentLinkedQueue<Action> newActorQ = mapOfActionQ.get(actorId);
 		if(newActorQ == null) {					//if this action not exists in the table we create a new action's queue -
@@ -78,16 +48,7 @@ public class ActorThreadPool {
 		VM.inc();
 	}
 
-	/**
-	 * closes the thread pool - this method interrupts all the threads and waits
-	 * for them to stop - it is returns *only* when there are no live threads in
-	 * the queue.
-	 *
-	 * after calling this method - one should not use the queue anymore.
-	 *
-	 * @throws InterruptedException
-	 *             if the thread that shut down the threads is interrupted
-	 */
+	
 	public void shutdown() throws InterruptedException {
 		SHUTDOWN.set(true);
 		VM.inc();
