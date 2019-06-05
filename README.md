@@ -1,9 +1,10 @@
-#  University Registration System - Actor Thread Pool Patern
+# :mortar_board: University Registration System :mortar_board:
+
 
 ## Introduction
 In Actor thread pool, each actor has a queue of actions. One can submit new actions for actors and the pool makes sure that each actor will run its actions in the order they were received, while not blocking other threads. The threads in the pool are assigned dynamically to the actors.
 
-## Part 1: Actor Thread Pool
+## Part 1: Actor Thread Pool Pattern
 
 ### Detailed Description
 In actor thread pool, each actor has a queue of actions. One can submit a new action to the actor. The threads in the actor thread pool are assigned dynamically to the actors, in the following way. Each thread searches for an action to execute in all the actors' queues. Once the thread found such an action, it will prevent any other thread from fetching actions from that queue. Once it nished executing the action, it will allow other threads to fetch actions from this queue. And that thread will try to nd another action to execute. Note, although a thread prevents other threads from processing actions from the queue which it is executing an action from it, the other threads are not blocked. The threads have to search for an action from other queues, and only if all the queues are empty or not available (threads work on them) then the threads will go sleep and should wake up once an action from an available queue is ready to be fetched. An important observation, in Actor Thread Pool, the amount of actors can be significantly greater than the amount of threads.
