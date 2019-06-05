@@ -13,3 +13,5 @@ In this assignment you will implement the Event Loop design pattern. In such pat
 
 ### Actors and Actions
 An action is a computational task. An actor is a computational entity that in response to actions it receives, an actor can: make local decisions, create more actors, send message to other actors. Actors may modify private state, but can only affect each other through messages. In this assignment, the messages between actors are actions. An actor can submit an action to another actor's queue. A thread will fetch this action from the receiver queue and execute it. Note, that actors submit actions to another actor's queue, when that action may affect the private state of the receiver's queue, and by that avoiding locks since only one thread can access the private state of an actor at the same time. You must not synchronize on the state of the actor, but you can use the state for the implementation of your Actor Thread Pool.
+
+![Alt text](C:\Users\nirkov\Desktop\actor.png?raw=true "Title")
