@@ -75,28 +75,28 @@ In its private state, the actor maintains a list of all the actions it has execu
 
 ### Actions Following is a list of actions that you should enable.
 
-1. Open A New Course: 
+- **Open A New Course**: 
   - Behavior: This action opens a new course in a specified department. The course has an initially available spaces and a list of prerequisites.
   - Actor: Must be initially submitted to the Department's actor.
-2. Add Student: 
+- **Add Student**: 
   - Behavior: This action adds a new student to a specified department. 
   - Actor: Must be initially submitted to the Department's actor.
-3. Participating In Course: 
+- **Participating In Course**: 
   - Behavior: This action should try to register the student in the course, if it succeeds, should add the course to the grades sheet of the student, and give him a grade if supplied. See the input example.
   - Actor: Must be initially submitted to the course's actor.
-4. Unregister: 
+- **Unregister**: 
   - Behavior: If the student is enrolled in the course, this action should unregister him (update the list of students of course, remove the course from the grades sheet of the student and increases the number of available spaces).
   - Actor: Must be initially submitted to the course's actor. 
-5. Close A Course: 
+- **Close A Course**: 
   - Behavior: This action should close a course. Should unregister all the registered students in the course and remove the course from the department courses' list and from the grade sheets of the students. The number of available spaces of the closed course should be updated to -1. DO NOT remove its actor. After closing the course, all the request for registration should be denied.
   - Actor: Must be initially submitted to the department's actor.
-6. Opening New places In a Course: 
+- **Opening New places In a Course**: 
   - Behavior: This action should increase the number of available spaces for the course. 
   - Actor: Must be initially submitted to the course's actor.
-7. Check Administrative Obligations: 
+- **Check Administrative Obligations**: 
   - Behavior: The department's secretary have to allocate one of the computers available in the warehouse, and check for each student if he meets some administrative obligations. The computer generates a signature and save it in the private state of the students.
   - Actor: Must be initially submitted to the department's actor.
-8. Announce about the end of registration period: 
+- **Announce about the end of registration period**: 
   - Behavior: From this moment, reject any further changes in registration. And, close courses with number of students less than 5.
   - Actor: Must be initially submitted to the department's actor.
 
