@@ -46,6 +46,7 @@ In order to enable the mentioned above. We use the promise design pattern (Using
   - start: start the threads belongs to this thread pool. 
   - shutdown: closes the thread pool - this method interrupts all the threads and wait for them to stop - it returns only when there are no live threads in the queue. After calling this method, one should not use the queues anymore
   
+![image](https://user-images.githubusercontent.com/32679759/58992912-bd58e380-87f4-11e9-937d-5ed8cc1f399b.png)
 
 
 ## Part 2: University Management System
